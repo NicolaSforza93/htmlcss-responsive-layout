@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+.logo {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+    display: inline-block;
+}
+
+:root {
+	--blue: #0084FD;
+	--light-blue: #B5DDFF;
+	--purple: #9792E4;
+    --yellow: #FDC15F;
+	--dark: #333333;
+	--light: #FFFFFF;
+}
+
+/* Layout */
+
+header {
+    background-color: var(--blue);
+    padding: 14px 0;
+}
+
+.container {
+    max-width: 1164px;
+    margin: 0 auto;
+}
+
+.container-medium {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.container-small {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-12 {
+	width: calc((100% / 12) * 12);
+}
+
+.col-8 {
+	width: calc((100% / 12) * 8);
+}
+
+.col-4 {
+	width: calc((100% / 12) * 4);
+}
+
+/* Navbar */
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: white;
+    font-size: 12px;
+}
+
+.nav-menu .button {
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    display: inline-block;
+    line-height: 30px;
+    border-radius: 30px;
+    padding: 0 11px;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-hamburger {
+    color: white;
+}
+
+
+
+
+
+
+
+/* DEBUG */
+
+.debug .container, .container-medium, .container-small {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.debug .row {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.debug [class^='col'] {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+
+/* Media Query */
+
+@media (min-width: 576px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .icon-hamburger {
+        display: inline;
+    }
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 992px) {
+    .icon-hamburger {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+}
+
