@@ -15,7 +15,11 @@ menu {
 }
 
 img {
-    width: 100%;
+    max-width: 100%;
+}
+
+figure img {
+    display: block;
 }
 
 a {
@@ -62,7 +66,29 @@ section {
 .row {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 20px;
 }
+
+p {
+    font-size: 12px;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-8 {
+    width: 100%;
+}
+
+.col-4 {
+    width: 100%;
+}
+
+.col-6 {
+    width: 100%;
+}
+
 
 /* NAVBAR */
 
@@ -82,6 +108,7 @@ section {
     display: flex;
     gap: 20px;
     align-items: center;
+    display: none;
 }
 
 .nav-menu a {
@@ -100,7 +127,7 @@ section {
 }
 
 nav .col {
-    padding: 0 10px;
+    padding: 0 12px;
 }
 
 .bar {
@@ -116,14 +143,25 @@ nav .col {
 /* CARD */
 
 .card {
-    padding: 10px;
+    padding: 0 12px;
+}
+
+.card-horizontal, .card-vertical {
+    height: 100%;
 }
 
 .card-image img {
-    display: block;
-    width: 208px;
-    padding-top: 36px;
-    padding-right: 48px;
+    max-width: 208px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-horizontal .card-content {
+    align-items: flex-start;
 }
 
 .button-blue i {
@@ -140,7 +178,7 @@ nav .col {
     padding: 0 40px;
 }
 
-.card-thin, .card-large {
+.card-vertical, .card-horizontal {
     background-color: var(--light-blue);
     border-radius: 20px;
 }
@@ -149,7 +187,6 @@ nav .col {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
     padding: 15px;
     font-size: 15px;
     color: gray;
@@ -162,15 +199,89 @@ nav .col {
 
 .card-content p {
     line-height: 25px;
-    font-size: 12px;
 }
 
-.card-thin {
+.card-vertical {
     text-align: center;
 }
 
 .card-icon i {
     font-size: 45px;
+}
+
+/* PLANNING */
+
+.purple {
+    background-color: var(--purple);
+}
+
+.purple .project {
+    padding: 4px 30px;
+}
+
+.planning-section {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.section-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: var(--light);
+}
+
+.section-body p {
+    line-height: 21px;
+}
+
+.purple .row .project:last-child{
+    align-self: flex-end;
+}
+
+.develop-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--light);
+    border-radius: 45px;
+    padding: 19px 10px;
+}
+
+.section-header img {
+    width: 300px;
+}
+
+.card-header img {
+    width: 270px;
+}
+
+.develop-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: var(--dark);
+    text-align: center;
+}
+
+.develop-card .card-body p {
+    line-height: 25px;
+    font-weight: 600;
+}
+
+.arrow-circle {
+    background-color: var(--purple);
+    width: 35px;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.arrow-circle i {
+    color: var(--dark);
+    font-size: 13px;
 }
 
 
@@ -184,12 +295,12 @@ nav .col {
 
 
 /* DEBUG */
-
+/* 
 .debug .container, .container-medium, .container-small {
     border: 1px solid black;
     padding: 10px;
-}
-
+} */
+/* 
 .debug .row {
     border: 1px solid black;
     padding: 10px;
@@ -198,7 +309,7 @@ nav .col {
 .debug [class^='col'] {
     border: 1px solid black;
     padding: 10px;
-}
+} */
 
 
 
@@ -206,50 +317,12 @@ nav .col {
 
 @media (min-width: 576px) {
 
-    .container {
-        width: 70%;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-    .icon-hamburger {
-        display: inline;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .card-large {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .card-large {
-        align-items: center;
-    }
-
-    .card-large .card-content {
-        align-items: flex-start;
-    }
-
-    .card-image img {
-        padding-top: 0;
-        padding-right: 0;
-    }
+    
 }
 
 @media (min-width: 768px) {
 
-    .container {
-        width: 100%;
-    }
-
-    .card-large {
-        display: flex;
-        flex-direction: column;
+    .card-horizontal {
         align-items: flex-start;
     }
 
@@ -264,6 +337,12 @@ nav .col {
     .col-4 {
         width: calc((100% / 12) * 4);
     }
+
+    .col-6 {
+        width: calc((100% / 12) * 6);
+    }
+
+    
 }
 
 @media (min-width: 992px) {
@@ -276,14 +355,29 @@ nav .col {
         display: flex;
     }
 
-    .card-large {
+    .card-horizontal {
         display: flex;
         flex-direction: row;
     }
 
+    .card-image {
+        align-self: flex-end;
+    }
+
     .card-image img {
-        padding-top: 36px;
         padding-right: 48px;
+    }
+
+    .purple .project {
+        padding: 47px;
+    }
+
+    .section-header img {
+        width: 290px;
+    }
+
+    .card-header img {
+        width: 200px;
     }
 }
 
