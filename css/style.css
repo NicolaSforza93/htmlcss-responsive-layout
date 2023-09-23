@@ -250,10 +250,6 @@ nav .col {
     padding: 19px 10px;
 }
 
-.card-header img {
-    width: 270px;
-}
-
 .develop-card .card-body {
     display: flex;
     flex-direction: column;
@@ -270,9 +266,10 @@ nav .col {
 
 .arrow-circle {
     background-color: var(--purple);
-    width: 35px;
-    border-radius: 50%;
-    padding: 8px;
+    line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+	padding: 0 16px;
 }
 
 .arrow-circle i {
@@ -289,7 +286,7 @@ nav .col {
 .heading-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     gap: 20px;
     padding: 0px 19px;
     margin-bottom: 15px;
@@ -305,7 +302,7 @@ nav .col {
     font-size: 30px;
 }
 
-.testimony {
+.box-testimonial {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -316,29 +313,29 @@ nav .col {
     color: var(--light);
 }
 
-.testimony figure {
+.box-testimonial figure {
     width: 150px;
     aspect-ratio: 1/1;
 }
 
-.testimony img {
+.box-testimonial img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
 }
 
-blockquote {
+.box-content {
     text-align: center;
 }
 
-blockquote footer {
+.testimonial-name {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 12px;
 }
 
-blockquote p {
+.testimonial-cite {
     margin-bottom: 20px;
 }
 
@@ -473,6 +470,107 @@ figure .quote i {
 
 /* PROPOSTA */
 
+.advice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.banner .col {
+    flex-basis: 250px;
+}
+
+.banner .row {
+    justify-content: center;
+}
+
+.banner .advice h4 {
+    color: var(--light);
+}
+
+.banner .advice h3 {
+    color: var(--light);
+    font-weight: 16px;
+}
+
+.banner .advice p {
+    color: var(--light);
+}
+
+.advice h4 {
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: 300;
+}
+
+.advice h1 {
+    color: var(--yellow);
+    font-size: 30px;
+}
+
+.button-white {
+    background-color: var(--light);
+    color: var(--purple);
+    font-size: 10px;
+    font-weight: 700;
+    display: inline-block;
+    line-height: 30px;
+    border-radius: 30px;
+    padding: 0 28px;
+}
+
+.information {
+    font-size: 8px;
+}
+
+.note {
+    font-size: 8px;
+    text-align: center;
+    line-height: 14px;
+}
+
+.special {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+
+footer .col {
+    flex-basis: 250px;
+}
+
+footer .row {
+    justify-content: center;
+}
+
+footer {
+    background-color: var(--dark);
+    padding: 30px 0px;
+}
+
+footer .col {
+    flex-basis: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+footer p {
+    color: var(--light);
+    text-align: center;
+    font-size: 9px;
+}
+
+footer u {
+    color: var(--purple);
+}
+
+.special.colored {
+    color: var(--purple);
+}
 
 
 
@@ -529,12 +627,12 @@ figure .quote i {
         width: calc((100% / 12) * 6);
     }
 
-    .testimony {
+    .box-testimonial {
         flex-direction: row;
         gap: 40px;
     }
 
-    blockquote {
+    .box-content {
         text-align: left;
     }
 
@@ -544,6 +642,10 @@ figure .quote i {
 
     .project {
         width: 100%;
+    }
+
+    .develop .card-header img {
+        max-width: 580px;
     }
 
 
@@ -590,6 +692,10 @@ figure .quote i {
 
     .project {
         width: calc((100% / 12) * 6);
+    }
+
+    .develop .card-header img {
+        max-width: 270px;
     }
 }
 
